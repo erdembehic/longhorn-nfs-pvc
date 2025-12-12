@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: dockerdata-nfs
+  namespace: onap
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: longhorn-rwx
+  resources:
+    requests:
+      storage: 50Gi
