@@ -5,13 +5,16 @@ metadata:
   namespace: argocd
 spec:
   project: default
+
   destination:
     server: https://kubernetes.default.svc
     namespace: onap
+
   source:
-    repoURL: https://git.example.com/repo.git
+    repoURL: https://github.com/erdembehic/longhorn-nfs-pvc
     targetRevision: main
     path: longhorn-rwx-bootstrap
+
   syncPolicy:
     automated:
       prune: true
