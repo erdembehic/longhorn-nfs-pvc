@@ -3,8 +3,6 @@ kind: Pod
 metadata:
   name: pvc-inspector
   namespace: onap
-  labels:
-    app: pvc-inspector
 spec:
   restartPolicy: Always
   containers:
@@ -13,6 +11,8 @@ spec:
       command: ["sh", "-c", "sleep infinity"]
       tty: true
       stdin: true
+      securityContext:
+        privileged: true
       volumeMounts:
         - name: data
           mountPath: /dockerdata-nfs
